@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
     color: "black",
   },
 }));
+//
 const Search = ({ repo, setIstrue, setSearch }) => {
   useEffect(() => {
     fetch(`https://api.github.com/repos/${repo}`)
