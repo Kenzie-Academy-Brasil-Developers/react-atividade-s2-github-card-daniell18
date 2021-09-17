@@ -39,7 +39,7 @@ const Search = ({ repo, setIstrue, setSearch }) => {
     setSearch("");
   };
   const classe = useStyles();
-  console.log(result);
+
   return (
     <>
       {result.id ? (
