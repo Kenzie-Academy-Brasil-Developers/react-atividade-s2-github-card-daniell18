@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button, Grid, Paper } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 //
 const Search = ({ repo, setIstrue, setSearch }) => {
+  console.log("aki");
   const [result, setResult] = useState([]);
   useEffect(() => {
     fetch(`https://api.github.com/repos/${repo}`)
@@ -38,7 +39,7 @@ const Search = ({ repo, setIstrue, setSearch }) => {
     setIstrue(false);
     setSearch("");
   };
-  console.log("aki");
+
   const classe = useStyles();
 
   return (
