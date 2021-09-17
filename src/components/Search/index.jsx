@@ -21,6 +21,10 @@ const useStyles = makeStyles((theme) => ({
   img: {
     width: "50px",
   },
+  erro: {
+    textAlign: "center",
+    color: "black",
+  },
 }));
 const Search = ({ repo, setIstrue, setSearch }) => {
   useEffect(() => {
@@ -45,7 +49,7 @@ const Search = ({ repo, setIstrue, setSearch }) => {
           alignItems="center"
           direction="column"
         >
-          <Grid item justifyContent="center" xs={6}>
+          <Grid item xs={6}>
             <Paper className={classe.paper}>
               <img
                 className={classe.img}
@@ -72,7 +76,23 @@ const Search = ({ repo, setIstrue, setSearch }) => {
           </Grid>
         </Grid>
       ) : (
-        <div>{result.message}</div>
+        <Grid
+          className={classe.erro}
+          direction="column"
+          container
+          justifyContent="center"
+        >
+          <h3>{result.message}</h3>
+          <p>Repositorio invalido pesquise novamente </p>
+          <Button
+            variant={"contained"}
+            color={"primary"}
+            onClick={() => handleClick()}
+            className={classe.button}
+          >
+            Pesquisar novamente
+          </Button>
+        </Grid>
       )}
     </>
   );
