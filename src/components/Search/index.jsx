@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 //
 const Search = ({ repo, setIstrue, setSearch }) => {
+  const [result, setResult] = useState("");
   useEffect(() => {
     fetch(`https://api.github.com/repos/${repo}`)
       .then((Response) => Response.json())
@@ -38,7 +39,6 @@ const Search = ({ repo, setIstrue, setSearch }) => {
     setSearch("");
   };
   const classe = useStyles();
-  const [result, setResult] = useState("");
   console.log(result);
   return (
     <>
